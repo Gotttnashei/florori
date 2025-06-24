@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flor y Abeja Animada</title>
+    <img src="C:\Users\Administrator\Desktop\flor\chatgpt.pngS" alt="Imagen de fondo" style="display: none;">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      position: relative;
+      background: radial-gradient(circle, #FFFAF0, #FFE4B5);
+    }
+
+    .imagen-fondo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-image: url('C:\Users\Administrator\Desktop\flor\chatgpt.png'); /* tu imagen personalizada */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+      opacity: 0.8;
+    }
+
+    .mensaje {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px;
+      color: #FF6347;
+      font-family: 'Arial', sans-serif;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .flor {
+      position: relative;
+      width: 50vw;
+      height: 50vw;
+      max-width: 300px;
+      max-height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: girar 10s infinite linear;
+      z-index: 1;
+    }
+
+    @keyframes girar {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .petalo {
+      width: 35%;
+      height: 60%;
+      background: radial-gradient(circle, #ff0040 30%, #cc00ff 90%);
+      position: absolute;
+      border-radius: 50%;
+      filter: drop-shadow(3px 3px 7px rgba(0, 0, 0, 0.2));
+      transition: transform 0.5s ease-in-out;
+      transform-origin: center center;
+    }
+
+    .flor:hover .petalo,
+    .flor:active .petalo {
+      transform: scale(1.2);
+    }
+
+    .petalo:nth-child(1) { transform: rotate(0deg) translateY(-50%); }
+    .petalo:nth-child(2) { transform: rotate(45deg) translateY(-50%); }
+    .petalo:nth-child(3) { transform: rotate(90deg) translateY(-50%); }
+    .petalo:nth-child(4) { transform: rotate(135deg) translateY(-50%); }
+    .petalo:nth-child(5) { transform: rotate(180deg) translateY(-50%); }
+    .petalo:nth-child(6) { transform: rotate(225deg) translateY(-50%); }
+    .petalo:nth-child(7) { transform: rotate(270deg) translateY(-50%); }
+    .petalo:nth-child(8) { transform: rotate(315deg) translateY(-50%); }
+
+    .centro {
+      width: 30%;
+      height: 30%;
+      background: radial-gradient(circle, #ff4a96 20%, #480563 90%);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.3);
+    }
+
+    .abeja {
+      position: absolute;
+      width: 12%;
+      height: 12%;
+      background: repeating-linear-gradient(
+        90deg,
+        yellow 0%,
+        yellow 20%,
+        black 20%,
+        black 40%
+      );
+      border: 2px solid black;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      animation: volar 3s infinite ease-in-out alternate;
+      z-index: 3;
+    }
+
+    @keyframes volar {
+      0% { transform: translate(-50%, -50%) translateX(0) translateY(0) rotate(0deg); }
+      50% { transform: translate(-50%, -50%) translateX(10vw) translateY(-5vh) rotate(10deg); }
+      100% { transform: translate(-50%, -50%) translateX(-10vw) translateY(5vh) rotate(-10deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="imagen-fondo"></div>
+  <div class="mensaje">Para vos, Ori 🐝🌼</div>
+  <div class="flor">
+    <div class="petalo"></div>
+    <div class="petalo"></div>
+    <div class="petalo"></div>
+    <div class="petalo"></div>
+    <div class="petalo"></div>
+    <div class="petalo"></div>
+    <div class="petalo"></div>
+    <div class="petalo"></div>
+    <div class="centro"></div>
+    <div class="abeja"></div>
+  </div>
+</body>
+</html>
